@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<br>
+    <form method="POST">
+        {% csrf_token %}
+        <table >
+           {{user_form.as_table}}
+            
+        </table>
+        <br>
+        <button type="submit">Update Employee</button>
+    </form>
+{% endblock content %}

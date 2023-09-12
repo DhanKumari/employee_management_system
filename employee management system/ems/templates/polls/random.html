@@ -1,0 +1,21 @@
+{% extends "base.html" %}  <!--base.html contails the head and the footer -->
+
+<!--we are entering details only if question is available -->
+{% block content %}
+        <h2>Detail page</h2> <!-- variable-->
+        <h3>{{question.title}}</h3>
+        <form method="POST" action="/polls/{{question.id}}/">
+                {%  csrf_token %} <!--it creates input -->
+
+        {% for choice in question.choices %}
+                <label>{{choice.text}}</label>
+                <input type="radio" name="choice" value="{{chioce.id}}">
+        {% empty %}
+                <p>There is no choice available for this question </p>
+        {% endfor %}
+        <button type ="submit" values="VOTE"> VOTE</button>
+        </form>
+
+        <p>Poll is created by {{question.created_by.first_name}}</p>
+
+{% endblock content %}

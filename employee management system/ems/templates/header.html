@@ -1,0 +1,39 @@
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class ="navbar-brand mb-0 h1">Employee management system</span>
+    <button class="navbar-toggler" type="button" data-toggele="collapse">
+         <span class ="navbar-toggler-icon"></span>
+
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class ="navbar-item">
+            <a class="nav-link" href="{% url 'employee_list' %}">
+                Employee
+            </a>
+        </li>   
+        <li class ="nav-item">
+            <a class="nav-link" href="{% url 'polls_list' %}">
+               Polls
+               <span class="badge badge-primary badge-pill">3</span>
+            </a>
+        </li>
+     </ul>
+</div>
+<div class="text-right">
+
+    <form method="POST" action="/logout/"> <!--user logout is called in urls -->
+        {% csrf_token %}
+    
+    <input type="submit" class = "btn btn-danger" value="logout"> 
+    </form>
+   
+</div>
+</div>
+
+
+
+
+
+
+
+ 
